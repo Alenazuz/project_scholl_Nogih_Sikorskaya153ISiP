@@ -1,0 +1,368 @@
+/*сброс базовых настроек*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/*шапка*/
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #630b0b;
+}
+.logo {
+  height: 100px;
+}
+
+/*навигационное меню*/
+.nav_menu {
+  width: auto;
+  list-style-type: none;
+  margin: 0 auto;
+  margin-right: 700px;
+  padding: 0 5%;
+  display: flex;
+}
+
+.nav_menu li {
+  flex: 1;
+  text-align: center;
+  margin-left: 0;
+}
+
+.nav_menu a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  display: block;
+}
+
+.nav_menu a::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #831d1a;
+  z-index: -1;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.nav_menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(66, 5, 5, 0.6);
+}
+
+.nav_menu a:hover::before {
+  opacity: 1;
+}
+
+.nav_menu a:active {
+  transform: translateY(0);
+}
+
+.nav_menu a.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+/*контент*/
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: rgb(160, 43, 22);
+  font-size: 50pt;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #7c1912;
+}
+/*улучшение читаемости*/
+h2 {
+  color: rgb(160, 43, 22);
+  font-size: 2rem;
+  margin: 30px 0 20px;
+  border-bottom: 2px solid rgb(160, 43, 22);
+  padding-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.my-image-class {
+  width: 100%;
+}
+/* Для важных сообщений */
+.highlight {
+  background-color: rgba(160, 43, 22, 0.1);
+  padding: 15px;
+  border-left: 4px solid rgb(117, 28, 12);
+  margin: 20px 0;
+}
+ 
+/*кнопки*/
+.btn {
+  background: #831d1a;
+  color: white;
+  border: 3px solid transparent;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #fd4b4b, #962e2e, #491515);
+  z-index: -1;
+  border-radius: 11px;
+}
+.btn {
+  text-decoration: none;
+}
+.btn-glow {
+  padding: 12px 24px;
+  background: #1a1a2e;
+  color: white;
+  border: 2px solid #ff6b6b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  background: rgba(94, 15, 15, 0.9);
+}
+
+
+/*подвал*/
+footer {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 40px 0 20px;
+  margin-top: 50px;
+}
+/* Контейнер для содержимого подвала */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* Секции в подвале */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #ff6b6b;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+/* Стили для списков в подвале */
+.footer-section .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section .list li {
+  margin-bottom: 10px;
+}
+
+.footer-section .list a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section .list a:hover {
+  color: #ff6b6b;
+}
+/* Контактная информация */
+.footer-section address {
+  line-height: 1.6;
+  color: #ccc;
+  font-style: normal;
+}
+/* Ссылки на соцсети */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #ff6b6b;
+  transform: translateY(-3px);
+}
+/* Нижняя часть подвала */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(39, 36, 36, 0.1);
+  color: #999;
+  font-size: 14px;
+}
+
+/*темная/светлая тема*/
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #0a0808;
+}
+.dark-theme .site-header,
+.dark-theme footer {
+  background-color: #2d2d2d;
+}
+
+/*слайдар*/
+.slider-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Кнопки навигации */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  transition: background 0.3s;
+}
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Индикаторы */
+.indicators {
+  text-align: center;
+  padding: 15px;
+}
+
+.indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: #ff6b6b;
+}
